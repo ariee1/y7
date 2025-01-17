@@ -9,25 +9,6 @@ def halaman_awal():
     if st.button("Mulai Kalkulasi"):
         return "kalkulator"
 
-def halaman_kalkulator():
-    st.title("Kalkulator Kebutuhan Gula")
-
-    # Input pengguna
-    buah_terpilih = st.multiselect("Pilih Buah", df_buah['Nama Buah'].tolist())
-    jumlah_buah = st.number_input("Masukkan Jumlah Buah (gram)", min_value=50, max_value=1000, value=100)
-    usia = st.number_input("Masukkan Usia (tahun)", min_value=1, max_value=100, value=30)
-    berat_badan = st.number_input("Masukkan Berat Badan (kg)", min_value=30, max_value=200, value=70)
-
-    # Tombol hitung
-    if st.button("Hitung"):
-        # Panggil fungsi hitung_kebutuhan_gula dan hitung_gula_buah
-        kebutuhan_gula = hitung_kebutuhan_gula(usia, berat_badan)
-        total_gula_konsumsi = hitung_total_gula(buah_terpilih, jumlah_buah)
-
-        # Tampilkan hasil
-        st.write(f"Kebutuhan gula harian Anda: {kebutuhan_gula} gram")
-        st.write(f"Total gula yang Anda konsumsi: {total_gula_konsumsi} gram")
-
 
 # Data gula per 100 gram buah (untuk contoh, Anda bisa menambahkan lebih banyak buah)
 buah_data = {
